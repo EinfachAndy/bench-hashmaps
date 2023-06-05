@@ -1,6 +1,6 @@
 all: help
 
-bench: build ## runs the ebnchmark and creates a chart.html
+bench: build ## runs the benchmark and creates a chart.html
 	./run.sh | tee bench.out
 	cat bench.out | ./chart.py > chart.html
 

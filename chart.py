@@ -26,6 +26,9 @@ for line in sys.stdin:
     time_ms = int(lineRaw[2].strip().split(' ')[0]) / (1000 * 1000)
     load = 'load=' + lineRaw[4].strip().split(' ')[0]
     mapping[benchName][mapName].append((n,time_ms,load))
+    if "BenchmarkU32RandomFullInserts" in benchName:
+        memory_bytes = int(lineRaw[3].strip().split(' ')[0]) / (1024 * 1024)
+        mapping["MemoryConsumptionU32"][mapName].append((n,memory_bytes,load))
     if "BenchmarkU64RandomFullInserts" in benchName:
         memory_bytes = int(lineRaw[3].strip().split(' ')[0]) / (1024 * 1024)
         mapping["MemoryConsumptionU64"][mapName].append((n,memory_bytes,load))
