@@ -1,8 +1,14 @@
+FILENAME:=$(shell ./filename.sh )
+
 all: help
 
-bench: build ## runs the benchmark and creates a chart.html
-	./run.sh | tee bench.out
-	cat bench.out | ./chart.py > chart.html
+run-bench: build ## runs a new benchmark
+	./run.sh | tee results/"$(FILENAME)"
+
+charts: results/*.out  ## creates html charts from beanchmark output files in results/*
+	for file in $^ ; do \
+		./chart.py -f $${file} -o $${file}.html ; \
+	done
 
 build: ## compiles the whole code base
 	@go version
