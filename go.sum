@@ -1,5 +1,5 @@
-github.com/EinfachAndy/hashmaps v0.2.1 h1:DC0IrC4chk6GBEvCqIqAbpIZ1Of5p6I0BSUUEUgmT1o=
-github.com/EinfachAndy/hashmaps v0.2.1/go.mod h1:9tiBLPM7QsWwUJJAeI0Bk+l07XjLF//usaOEZpJIP6I=
+github.com/EinfachAndy/hashmaps v0.3.1 h1:uhfx/vZJqLNJOmgHnWAWScxBaX9nvS0yLYTBQUc2oxM=
+github.com/EinfachAndy/hashmaps v0.3.1/go.mod h1:9tiBLPM7QsWwUJJAeI0Bk+l07XjLF//usaOEZpJIP6I=
 github.com/cornelk/hashmap v1.0.8 h1:nv0AWgw02n+iDcawr5It4CjQIAcdMMKRrs10HOJYlrc=
 github.com/cornelk/hashmap v1.0.8/go.mod h1:RfZb7JO3RviW/rT6emczVuC/oxpdz4UsSB2LJSclR1k=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

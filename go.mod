@@ -3,7 +3,7 @@ module bench-hashmaps
 go 1.19
 
 require (
-	github.com/EinfachAndy/hashmaps v0.2.1
+	github.com/EinfachAndy/hashmaps v0.3.1
 	github.com/cornelk/hashmap v1.0.8
 	github.com/dolthub/swiss v0.1.0
 	github.com/google/uuid v1.3.0

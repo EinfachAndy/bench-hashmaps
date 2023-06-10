@@ -299,3 +299,45 @@ func BenchmarkU64RandomFullIteration(b *testing.B) {
 		}
 	}
 }
+
+// Before the test, n/2 elements are inserted in the same way as the random full inserts test.
+// Then the vector is shuffled and processed (50% reads, 25% inserts, 25% deletes).
+// This tests combines all operations with a successful vs unsuccessful rate that is about 50/50.
+func BenchmarkU64_50Reads_25Inserts_25Deletes(b *testing.B) {
+	for _, r := range getRanges() {
+		arr := genRandIntArray[uint64](r)
+		for _, mapName := range getMapNames() {
+			b.Run(fmt.Sprintf("%s-%d", mapName, r), func(b *testing.B) {
+				load := float32(-1.0)
+				for i := 0; i < b.N; i++ {
+					b.StopTimer()
+
+					m := createMap[uint64, uint64](0, mapName)
+
+					for j := 0; j < len(arr)/2; j++ {
+						m.Put(arr[j], arr[j])
+					}
+					rand.Shuffle(len(arr), func(i, j int) { arr[i], arr[j] = arr[j], arr[i] })
+
+					b.StartTimer()
+					for _, key := range arr {
+						switch rand.Intn(4) {
+						case 0:
+							fallthrough
+						case 1:
+							m.Get(key)
+						case 2:
+							m.Put(key, key)
+						case 3:
+							m.Remove(key)
+						}
+					}
+					b.StopTimer()
+
+					load = m.Load()
+				}
+				report(b, r, load)
+			})
+		}
+	}
+}

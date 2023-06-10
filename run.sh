@@ -6,4 +6,4 @@ trap 'trap - SIGINT; kill -SIGINT $$' SIGINT;
 
 cd $SCRIPT_DIR
 # pass environment variables to support benchmark configuration
-RANGES="$RANGES" MAPS="$MAPS" go test -bench=.  -benchtime=2x -timeout 60m
+RANGES="$RANGES" MAPS="$MAPS" go test -bench=.  -benchtime=2x -timeout 120m

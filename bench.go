@@ -57,7 +57,7 @@ func handleElem3(key any, value any) bool {
 func getMapNames() []string {
 	m := os.Getenv("MAPS")
 	if m == "" {
-		m = "std robin robinLowLoad unordered swiss generic"
+		m = "std robin robinLowLoad unordered swiss generic flat"
 	}
 	return strings.Split(m, " ")
 }
@@ -120,6 +120,19 @@ func createMap[K hashmaps.Ordered, V any](n int, mapName string) hashmaps.IHashM
 		m := hashmaps.NewRobinHood[K, V]()
 		m.Reserve(uintptr(n))
 		m.MaxLoad(0.5)
+		return hashmaps.IHashMap[K, V]{
+			Get:     m.Get,
+			Reserve: m.Reserve,
+			Put:     m.Put,
+			Remove:  m.Remove,
+			Clear:   m.Clear,
+			Size:    m.Size,
+			Each:    m.Each,
+			Load:    m.Load,
+		}
+	case "flat":
+		m := hashmaps.NewFlat[K, V]()
+		m.Reserve(uintptr(n))
 		return hashmaps.IHashMap[K, V]{
 			Get:     m.Get,
 			Reserve: m.Reserve,
@@ -226,6 +239,7 @@ func createMap[K hashmaps.Ordered, V any](n int, mapName string) hashmaps.IHashM
 
 func genRandIntArray[V constraints.Integer](n int) []V {
 	values := make(map[V]bool, n)
+	values[0] = true
 	arr := make([]V, n)
 	for i := 0; i < n; {
 		x := V(rand.Uint64())
@@ -242,7 +256,7 @@ func genRandIntArray[V constraints.Integer](n int) []V {
 func genShuffledIntArray[V constraints.Integer](n int) []V {
 	arr := make([]V, n)
 	for i := range arr {
-		arr[i] = V(i)
+		arr[i] = V(i + 1)
 	}
 	rand.Seed(time.Now().UnixNano())
 	rand.Shuffle(len(arr), func(i, j int) { arr[i], arr[j] = arr[j], arr[i] })
@@ -255,6 +269,7 @@ func genDifferentRandIntArray[V constraints.Integer](in []V) []V {
 	for _, x := range in {
 		values[x] = true
 	}
+	values[0] = true
 
 	for j := 0; j < len(out); {
 		y := V(rand.Uint64())
