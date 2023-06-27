@@ -57,7 +57,7 @@ func handleElem3(key any, value any) bool {
 func getMapNames() []string {
 	m := os.Getenv("MAPS")
 	if m == "" {
-		m = "std robin robinLowLoad unordered swiss generic flat"
+		m = "std robin robinLowLoad unordered swiss generic flat hopscotch"
 	}
 	return strings.Split(m, " ")
 }
@@ -132,6 +132,19 @@ func createMap[K hashmaps.Ordered, V any](n int, mapName string) hashmaps.IHashM
 		}
 	case "flat":
 		m := hashmaps.NewFlat[K, V]()
+		m.Reserve(uintptr(n))
+		return hashmaps.IHashMap[K, V]{
+			Get:     m.Get,
+			Reserve: m.Reserve,
+			Put:     m.Put,
+			Remove:  m.Remove,
+			Clear:   m.Clear,
+			Size:    m.Size,
+			Each:    m.Each,
+			Load:    m.Load,
+		}
+	case "hopscotch":
+		m := hashmaps.NewHopscotch[K, V]()
 		m.Reserve(uintptr(n))
 		return hashmaps.IHashMap[K, V]{
 			Get:     m.Get,

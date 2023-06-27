@@ -1,5 +1,5 @@
-github.com/EinfachAndy/hashmaps v0.3.1 h1:uhfx/vZJqLNJOmgHnWAWScxBaX9nvS0yLYTBQUc2oxM=
-github.com/EinfachAndy/hashmaps v0.3.1/go.mod h1:9tiBLPM7QsWwUJJAeI0Bk+l07XjLF//usaOEZpJIP6I=
+github.com/EinfachAndy/hashmaps v0.4.0 h1:v1gYt5xduzAsDuSZRH78tRrZ9pGFuT0cj8x+h9IbyUA=
+github.com/EinfachAndy/hashmaps v0.4.0/go.mod h1:9tiBLPM7QsWwUJJAeI0Bk+l07XjLF//usaOEZpJIP6I=
 github.com/cornelk/hashmap v1.0.8 h1:nv0AWgw02n+iDcawr5It4CjQIAcdMMKRrs10HOJYlrc=
 github.com/cornelk/hashmap v1.0.8/go.mod h1:RfZb7JO3RviW/rT6emczVuC/oxpdz4UsSB2LJSclR1k=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -16,6 +16,6 @@ github.com/stretchr/testify v1.8.1 h1:w7B6lhMri9wdJUVmEZPGGhZzrYTPvgJArz7wNPgYKs
 github.com/thepudds/swisstable v0.0.0-20221011152303-9c77dc657777 h1:5u+6YWU2faS+Sr/x8j9yalMpSDUkatNOZWXV3wMUCGQ=
 github.com/zyedidia/generic v1.2.1 h1:Zv5KS/N2m0XZZiuLS82qheRG4X1o5gsWreGb0hR7XDc=
 github.com/zyedidia/generic v1.2.1/go.mod h1:ly2RBz4mnz1yeuVbQA/VFwGjK3mnHGRj1JuoG336Bis=
-golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1 h1:k/i9J1pBpvlfR+9QsetwPyERsqu1GIbi967PQMq3Ivc=
-golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1/go.mod h1:V1LtkGg67GoY2N1AnLN78QLrzxkLyJw7RJb1gzOOz9w=
+golang.org/x/exp v0.0.0-20230626212559-97b1e661b5df h1:UA2aFVmmsIlefxMk29Dp2juaUSth8Pyn3Tq5Y5mJGME=
+golang.org/x/exp v0.0.0-20230626212559-97b1e661b5df/go.mod h1:FXUEEKJgO7OQYeo8N01OfiKP8RXMtf6e8aTskBGqWdc=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
