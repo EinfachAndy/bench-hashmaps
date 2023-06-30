@@ -23,6 +23,15 @@ import (
 	gmap "github.com/zyedidia/generic/hashmap"
 )
 
+// ordered is a constraint that permits any ordered type: any type
+// that supports the operators < <= >= >.
+type ordered interface {
+	~int | ~int8 | ~int16 | ~int32 | ~int64 |
+		~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
+		~float32 | ~float64 |
+		~string
+}
+
 func init() {
 	rand.Seed(time.Now().UnixNano())
 }
@@ -57,12 +66,12 @@ func handleElem3(key any, value any) bool {
 func getMapNames() []string {
 	m := os.Getenv("MAPS")
 	if m == "" {
-		m = "std robin robinLowLoad unordered swiss generic flat hopscotch"
+		m = "std robin robinLowLoad unordered swiss generic flat hopscotch hopscotchLowLoad"
 	}
 	return strings.Split(m, " ")
 }
 
-func createMap[K hashmaps.Ordered, V any](n int, mapName string) hashmaps.IHashMap[K, V] {
+func createMap[K ordered, V any](n int, mapName string) hashmaps.IHashMap[K, V] {
 	switch mapName {
 	case "std":
 		m := make(map[K]V, n)
@@ -92,6 +101,7 @@ func createMap[K hashmaps.Ordered, V any](n int, mapName string) hashmaps.IHashM
 		}
 	case "robin":
 		m := hashmaps.NewRobinHood[K, V]()
+		m.MaxLoad(0.8)
 		m.Reserve(uintptr(n))
 		return hashmaps.IHashMap[K, V]{
 			Get:     m.Get,
@@ -118,8 +128,8 @@ func createMap[K hashmaps.Ordered, V any](n int, mapName string) hashmaps.IHashM
 		}
 	case "robinLowLoad":
 		m := hashmaps.NewRobinHood[K, V]()
-		m.Reserve(uintptr(n))
 		m.MaxLoad(0.5)
+		m.Reserve(uintptr(n))
 		return hashmaps.IHashMap[K, V]{
 			Get:     m.Get,
 			Reserve: m.Reserve,
@@ -145,6 +155,21 @@ func createMap[K hashmaps.Ordered, V any](n int, mapName string) hashmaps.IHashM
 		}
 	case "hopscotch":
 		m := hashmaps.NewHopscotch[K, V]()
+		m.MaxLoad(0.8)
+		m.Reserve(uintptr(n))
+		return hashmaps.IHashMap[K, V]{
+			Get:     m.Get,
+			Reserve: m.Reserve,
+			Put:     m.Put,
+			Remove:  m.Remove,
+			Clear:   m.Clear,
+			Size:    m.Size,
+			Each:    m.Each,
+			Load:    m.Load,
+		}
+	case "hopscotchLowLoad":
+		m := hashmaps.NewHopscotch[K, V]()
+		m.MaxLoad(0.5)
 		m.Reserve(uintptr(n))
 		return hashmaps.IHashMap[K, V]{
 			Get:     m.Get,

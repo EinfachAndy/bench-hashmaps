@@ -4,6 +4,7 @@ package bench_test
 import (
 	"fmt"
 	"math/rand"
+	"runtime"
 	"testing"
 )
 
@@ -52,6 +53,7 @@ func BenchmarkU64RandomFullInserts(b *testing.B) {
 						m.Put(arr[j], 1)
 					}
 					b.StopTimer()
+					runtime.GC() // more accurate memory tracking
 
 					load = m.Load()
 				}

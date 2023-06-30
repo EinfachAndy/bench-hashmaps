@@ -25,17 +25,19 @@ MAPS="swiss std" RANGES="50000 100000 200000 400000" make run-bench
 
 ### Supported hash maps
 
-| Name          | Module                |
-|---------------|-----------------------|
-| std           | golang map |
-| robin         | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#RobinHood (lf 0.8) |
-| robinLowLoad  | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#RobinHood (lf 0.5) |
-| unordered     | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#Unordered |
-| flat          | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#Flat |
-| swiss         | https://pkg.go.dev/github.com/dolthub/swiss#Map |
-| generic       | https://pkg.go.dev/github.com/zyedidia/generic/hashmap#Map |
-| cornelk       | https://pkg.go.dev/github.com/cornelk/hashmap#Map |
-| sync          | https://pkg.go.dev/sync#Map |
+| Name              | Module                |
+|-------------------|-----------------------|
+| std               | golang map |
+| robin             | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#RobinHood (lf 0.8) |
+| robinLowLoad      | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#RobinHood (lf 0.5) |
+| hopscotch         | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#Hopscotch (lf 0.8) |
+| hopscotchLowLoad  | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#Hopscotch (lf 0.5) |
+| unordered         | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#Unordered |
+| flat              | https://pkg.go.dev/github.com/EinfachAndy/hashmaps#Flat |
+| swiss             | https://pkg.go.dev/github.com/dolthub/swiss#Map |
+| generic           | https://pkg.go.dev/github.com/zyedidia/generic/hashmap#Map |
+| cornelk           | https://pkg.go.dev/github.com/cornelk/hashmap#Map |
+| sync              | https://pkg.go.dev/sync#Map |
 
 ## Generate charts
 
@@ -46,9 +48,10 @@ make charts
 firefox results/IntelRCoreTMi7-10610UCPU180GHz_2023-06-11_00-36-01.out.html
 ```
 
-### Example Chart
+## Results
 
-![Plot](results/example_plot.png "Plot")
+* [Intel Core i7-10610U](https://einfachandy.github.io/bench-hashmaps/results/IntelRCoreTMi7-10610UCPU180GHz_2023-07-01_12-04-35.out.html "Plot")
+* [Intel Core i7-7700](https://einfachandy.github.io/bench-hashmaps/results/IntelRCoreTMi7-7700CPU360GHz_2023-07-01_15-43-00.out.html "Plot")
 
 # Contributing
 

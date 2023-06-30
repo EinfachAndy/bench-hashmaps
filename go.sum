@@ -1,5 +1,5 @@
-github.com/EinfachAndy/hashmaps v0.4.0 h1:v1gYt5xduzAsDuSZRH78tRrZ9pGFuT0cj8x+h9IbyUA=
-github.com/EinfachAndy/hashmaps v0.4.0/go.mod h1:9tiBLPM7QsWwUJJAeI0Bk+l07XjLF//usaOEZpJIP6I=
+github.com/EinfachAndy/hashmaps v0.4.2 h1:s5tGYOOFEfWoBx13NI7q68UWVfGGdBUoq7fscfWtGN0=
+github.com/EinfachAndy/hashmaps v0.4.2/go.mod h1:gevvH484ZT/NqrjX9d5EjOvzeGVGky4oSsTwHD2QhwY=
 github.com/cornelk/hashmap v1.0.8 h1:nv0AWgw02n+iDcawr5It4CjQIAcdMMKRrs10HOJYlrc=
 github.com/cornelk/hashmap v1.0.8/go.mod h1:RfZb7JO3RviW/rT6emczVuC/oxpdz4UsSB2LJSclR1k=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -12,7 +12,7 @@ github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/segmentio/fasthash v1.0.3 h1:EI9+KE1EwvMLBWwjpRDc+fEM+prwxDYbslddQGtrmhM=
 github.com/segmentio/fasthash v1.0.3/go.mod h1:waKX8l2N8yckOgmSsXJi7x1ZfdKZ4x7KRMzBtS3oedY=
-github.com/stretchr/testify v1.8.1 h1:w7B6lhMri9wdJUVmEZPGGhZzrYTPvgJArz7wNPgYKsk=
+github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
 github.com/thepudds/swisstable v0.0.0-20221011152303-9c77dc657777 h1:5u+6YWU2faS+Sr/x8j9yalMpSDUkatNOZWXV3wMUCGQ=
 github.com/zyedidia/generic v1.2.1 h1:Zv5KS/N2m0XZZiuLS82qheRG4X1o5gsWreGb0hR7XDc=
 github.com/zyedidia/generic v1.2.1/go.mod h1:ly2RBz4mnz1yeuVbQA/VFwGjK3mnHGRj1JuoG336Bis=
