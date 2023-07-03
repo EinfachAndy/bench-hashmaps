@@ -7,8 +7,6 @@ import (
 	"testing"
 )
 
-// Before the test, a vector with the random uuids is generated.
-// Then for each value in the vector, the key-value pair (k, 1) is inserted into the hash map.
 func BenchmarkUUIDRandomInserts(b *testing.B) {
 	for _, r := range getRanges() {
 		arr := genUUIDArray(r)
@@ -60,8 +58,6 @@ func BenchmarkUUIDInsertsWithReserve(b *testing.B) {
 	}
 }
 
-// Before the test, n elements in the same way as in the random uuid insert test are added.
-// Each key is deleted one by one in a different and random order than the one they were inserted.
 func BenchmarkUUIDRandomFullDeletes(b *testing.B) {
 	for _, r := range getRanges() {
 		arr := genUUIDArray(r)
@@ -91,8 +87,6 @@ func BenchmarkUUIDRandomFullDeletes(b *testing.B) {
 	}
 }
 
-// Before the test, n elements are inserted in the same way as in the random uuid insert test.
-// Read each key-value pair is look up in a different and random order than the one they were inserted.
 func BenchmarkUUIDRandomReads(b *testing.B) {
 	for _, r := range getRanges() {
 		arr := genUUIDArray(r)
@@ -125,9 +119,6 @@ func BenchmarkUUIDRandomReads(b *testing.B) {
 	}
 }
 
-// Before the test, n elements are inserted in the same way as in the random uuid insert test.
-// Then a another vector of n random elements different from the inserted elements is generated
-// which is tried to search in the hash map.
 func BenchmarkUUIDReadsMisses(b *testing.B) {
 	for _, r := range getRanges() {
 		arr := genUUIDArray(r)
@@ -161,9 +152,6 @@ func BenchmarkUUIDReadsMisses(b *testing.B) {
 	}
 }
 
-// Before the test, we insert n elements in the same way as in the random uuid insert test
-// before deleting half of these values randomly. We then try to read all the original values
-// in a different order which will lead to 50% hits and 50% misses.
 func BenchmarkUUIDRandomFullReadsAfterDeletingHalf(b *testing.B) {
 	for _, r := range getRanges() {
 		arr := genUUIDArray(r)
@@ -207,8 +195,6 @@ func BenchmarkUUIDRandomFullReadsAfterDeletingHalf(b *testing.B) {
 	}
 }
 
-// Before the test, n elements are inserted in the same way as in the random uuid insert test.
-// Then use the hash map iterators to read all the key-value pairs.
 func BenchmarkUUIDRandomFullIteration(b *testing.B) {
 	for _, r := range getRanges() {
 		arr := genUUIDArray(r)
@@ -236,9 +222,6 @@ func BenchmarkUUIDRandomFullIteration(b *testing.B) {
 	}
 }
 
-// Before the test, n/2 elements are inserted in the same way as the random uuid insert test.
-// Then the vector is shuffled and processed (50% reads, 25% inserts, 25% deletes).
-// This tests combines all operations with a successful vs unsuccessful rate that is about 50/50.
 func BenchmarkUUID_50Reads_25Inserts_25Deletes(b *testing.B) {
 	for _, r := range getRanges() {
 		arr := genUUIDArray(r)
