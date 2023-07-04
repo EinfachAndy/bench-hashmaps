@@ -73,7 +73,7 @@ name: 'hopscotchLowLoad',
    mode: 'lines+markers', type: 'scatter'
     };
 var data_MemoryConsumptionU32=[MemoryConsumptionU32_std, MemoryConsumptionU32_robin, MemoryConsumptionU32_robinLowLoad, MemoryConsumptionU32_unordered, MemoryConsumptionU32_swiss, MemoryConsumptionU32_generic, MemoryConsumptionU32_flat, MemoryConsumptionU32_hopscotch, MemoryConsumptionU32_hopscotchLowLoad];
-var layout_MemoryConsumptionU32 = {title:'MemoryConsumptionU32', xaxis: {title: 'number of entries in hash table (n)'},yaxis: {title: 'time (ms)'}};
+var layout_MemoryConsumptionU32 = {title:'MemoryConsumptionU32', xaxis: {title: 'number of entries in hash table (n)'},yaxis: {title: 'memory (MB)'}};
 Plotly.newPlot('MemoryConsumptionU32', data_MemoryConsumptionU32, layout_MemoryConsumptionU32);
 </script></div><center><p style="width: 700px;padding: 20px;"> 
     Memory consumption of the random insert benchmark.
@@ -144,7 +144,7 @@ name: 'hopscotchLowLoad',
    mode: 'lines+markers', type: 'scatter'
     };
 var data_MemoryConsumptionU64=[MemoryConsumptionU64_std, MemoryConsumptionU64_robin, MemoryConsumptionU64_robinLowLoad, MemoryConsumptionU64_unordered, MemoryConsumptionU64_swiss, MemoryConsumptionU64_generic, MemoryConsumptionU64_flat, MemoryConsumptionU64_hopscotch, MemoryConsumptionU64_hopscotchLowLoad];
-var layout_MemoryConsumptionU64 = {title:'MemoryConsumptionU64', xaxis: {title: 'number of entries in hash table (n)'},yaxis: {title: 'time (ms)'}};
+var layout_MemoryConsumptionU64 = {title:'MemoryConsumptionU64', xaxis: {title: 'number of entries in hash table (n)'},yaxis: {title: 'memory (MB)'}};
 Plotly.newPlot('MemoryConsumptionU64', data_MemoryConsumptionU64, layout_MemoryConsumptionU64);
 </script></div><center><p style="width: 700px;padding: 20px;"> 
     Memory consumption of the random insert benchmark.
@@ -215,7 +215,7 @@ name: 'hopscotchLowLoad',
    mode: 'lines+markers', type: 'scatter'
     };
 var data_MemoryConsumptionUUID=[MemoryConsumptionUUID_std, MemoryConsumptionUUID_robin, MemoryConsumptionUUID_robinLowLoad, MemoryConsumptionUUID_unordered, MemoryConsumptionUUID_swiss, MemoryConsumptionUUID_generic, MemoryConsumptionUUID_flat, MemoryConsumptionUUID_hopscotch, MemoryConsumptionUUID_hopscotchLowLoad];
-var layout_MemoryConsumptionUUID = {title:'MemoryConsumptionUUID', xaxis: {title: 'number of entries in hash table (n)'},yaxis: {title: 'time (ms)'}};
+var layout_MemoryConsumptionUUID = {title:'MemoryConsumptionUUID', xaxis: {title: 'number of entries in hash table (n)'},yaxis: {title: 'memory (MB)'}};
 Plotly.newPlot('MemoryConsumptionUUID', data_MemoryConsumptionUUID, layout_MemoryConsumptionUUID);
 </script></div><center><p style="width: 700px;padding: 20px;"> 
     Memory consumption of the random insert benchmark.

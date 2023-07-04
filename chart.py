@@ -164,7 +164,7 @@ def main():
         fd_out.write("<div id='"+benchmark+"'><script>\n")
         names = []
         y_naming = "time (ms)"
-        if benchmark == "MemoryConsumption":
+        if "MemoryConsumption" in benchmark:
             y_naming = "memory (MB)"
         for mapName in b:
             points = b[mapName]
